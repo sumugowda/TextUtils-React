@@ -65,11 +65,11 @@ export default function TextForm(props) {
       <h1>Text Summary Here</h1>
       <div className="input-group my-2 px-2 w-50">
         <span className={`input-group-text text-${props.mode === 'light'?'dark':'light'} bg-${props.mode}`}>Words</span>
-        <textarea className={`form-control text-${props.mode === 'light'?'dark':'light'} bg-${props.mode}`} aria-label="With textarea" value={text.split(" ").filter((element)=>{return element.length!=0}).length} readOnly  ></textarea>
+        <textarea className={`form-control text-${props.mode === 'light'?'dark':'light'} bg-${props.mode}`} aria-label="With textarea" value={text.split(/\s+/).filter((element)=>{return element.length!=0}).length} readOnly  ></textarea>
       </div>
         <div className="input-group my-2 px-2 w-50">
         <span className={`input-group-text text-${props.mode === 'light'?'dark':'light'} bg-${props.mode}`}>Time Required to read</span>
-        <textarea className={`form-control text-${props.mode === 'light'?'dark':'light'} bg-${props.mode}`} aria-label="With textarea" value={0.25 * text.split(' ').length + " seconds"} readOnly ></textarea>
+        <textarea className={`form-control text-${props.mode === 'light'?'dark':'light'} bg-${props.mode}`} aria-label="With textarea" value={0.25 * text.split(/\s+/).filter((element)=>{return element.length!=0}).length + " seconds"} readOnly ></textarea>
         </div>
       <div className="input-group px-2 w-50">
         <span className={`input-group-text text-${props.mode === 'light'?'dark':'light'} bg-${props.mode}`}>Charecters</span>
