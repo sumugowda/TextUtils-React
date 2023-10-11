@@ -1,15 +1,14 @@
 import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React,{useState} from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Routes
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Routes
+// } from "react-router-dom";
 
 
 function App() {
@@ -53,22 +52,20 @@ function App() {
   }
   return (
     <>
-      <Router>
         <Navbar head="Textutils" about="About" mode={Mode} toggleMode = {toggleMode} swchCol={switchColor} /> 
         <Alert Alrt={alert}  /> 
         {/* acts as parameter to a funtion so that heading home and other things can be edited if specified in the Navbar.js file  Change the textutils inside the head and it will be changed in the component also*/}
+        {/* <Router>
         <Routes>
-          <Route path="/" element={ <div className="container my-5 ">
-              <TextForm showAlert={showAlert} head="Enter your text here.." mode={Mode} />
-            </div>} />
+          <Route path="/" element={ 
           <Route path="/About" element={ <div className="container my-5 ">
             <About/>
           </div>} />
         </Routes>
-        
-           
-         
-      </Router>
+       </Router>  */}
+       <div className="container my-5 ">
+              <TextForm showAlert={showAlert} head="Enter your text here.." mode={Mode} />
+            </div>
     </>
   );
 }
