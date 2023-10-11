@@ -53,10 +53,10 @@ export default function TextForm(props) {
         <button className="btn btn-secondary" onClick={hUpC}>
           Convert to Upper case
         </button>
-        <button className="btn btn-secondary mx-2" onClick={hLpC}>
+        <button className="btn btn-secondary mx-2 my-1" onClick={hLpC}>
           Convert to Lower  case
         </button>
-        <button className="btn btn-danger mx-2" onClick={hCc}>
+        <button className="btn btn-danger mx-2 my-1" onClick={hCc}>
           Clear
         </button>
         {/* <button className="btn btn-dark mx-2" onClick={hMc}> {btnText} </button> */}
@@ -65,7 +65,7 @@ export default function TextForm(props) {
       <h1>Text Summary Here</h1>
       <div className="input-group my-2 px-2 w-50">
         <span className={`input-group-text text-${props.mode === 'light'?'dark':'light'} bg-${props.mode}`}>Words</span>
-        <textarea className={`form-control text-${props.mode === 'light'?'dark':'light'} bg-${props.mode}`} aria-label="With textarea" value={text.split(" ").length} readOnly  ></textarea>
+        <textarea className={`form-control text-${props.mode === 'light'?'dark':'light'} bg-${props.mode}`} aria-label="With textarea" value={text.split(" ").filter((element)=>{return element.length!=0}).length} readOnly  ></textarea>
       </div>
         <div className="input-group my-2 px-2 w-50">
         <span className={`input-group-text text-${props.mode === 'light'?'dark':'light'} bg-${props.mode}`}>Time Required to read</span>
